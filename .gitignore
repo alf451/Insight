@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+*.egg-info/
+
+# Probe/simulator runtime artifacts (never commit real captures from a client site)
+probe/captures/
+*.jsonl
+!docs/examples/*.jsonl
+
+node_modules/
+dist/
+.vite/
+
+.pytest_cache/

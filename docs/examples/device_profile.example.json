@@ -1,0 +1,234 @@
+{
+  "format": "insight-device-profile/v1",
+  "device": {
+    "name": null,
+    "manufacturer": "Sesotec",
+    "model": null,
+    "firmware": null
+  },
+  "mqtt": {
+    "broker": "127.0.0.1",
+    "port": 1883,
+    "protocol": "3.1.1",
+    "subscription": "#"
+  },
+  "topics": [
+    {
+      "topic": "insight/sim/MD-SIM-01/event",
+      "count": 3,
+      "first_seen": "2026-09-13T08:50:32.873863+00:00",
+      "last_seen": "2026-09-13T08:50:32.874647+00:00"
+    },
+    {
+      "topic": "insight/sim/MD-SIM-01/status",
+      "count": 3,
+      "first_seen": "2026-09-13T08:50:32.272263+00:00",
+      "last_seen": "2026-09-13T08:50:32.672972+00:00"
+    }
+  ],
+  "variables": [
+    {
+      "topic": "insight/sim/MD-SIM-01/event",
+      "json_path": "$.details",
+      "data_type": "object",
+      "sample_value": {},
+      "occurrence_count": 2,
+      "first_seen": "2026-09-13T08:50:32.873863+00:00",
+      "last_seen": "2026-09-13T08:50:32.874268+00:00",
+      "sensitivity_candidate": false,
+      "status": "DISCOVERED",
+      "access": "READ"
+    },
+    {
+      "topic": "insight/sim/MD-SIM-01/event",
+      "json_path": "$.details.reason",
+      "data_type": "string",
+      "sample_value": "METAL_TEST",
+      "occurrence_count": 1,
+      "first_seen": "2026-09-13T08:50:32.874647+00:00",
+      "last_seen": "2026-09-13T08:50:32.874647+00:00",
+      "sensitivity_candidate": false,
+      "status": "DISCOVERED",
+      "access": "READ"
+    },
+    {
+      "topic": "insight/sim/MD-SIM-01/event",
+      "json_path": "$.device_id",
+      "data_type": "string",
+      "sample_value": "MD-SIM-01",
+      "occurrence_count": 3,
+      "first_seen": "2026-09-13T08:50:32.873863+00:00",
+      "last_seen": "2026-09-13T08:50:32.874647+00:00",
+      "sensitivity_candidate": false,
+      "status": "DISCOVERED",
+      "access": "READ"
+    },
+    {
+      "topic": "insight/sim/MD-SIM-01/event",
+      "json_path": "$.event",
+      "data_type": "string",
+      "sample_value": "ALARM",
+      "occurrence_count": 3,
+      "first_seen": "2026-09-13T08:50:32.873863+00:00",
+      "last_seen": "2026-09-13T08:50:32.874647+00:00",
+      "sensitivity_candidate": false,
+      "status": "DISCOVERED",
+      "access": "READ"
+    },
+    {
+      "topic": "insight/sim/MD-SIM-01/event",
+      "json_path": "$.timestamp",
+      "data_type": "string",
+      "sample_value": "2026-09-13T08:50:32.872895+00:00",
+      "occurrence_count": 3,
+      "first_seen": "2026-09-13T08:50:32.873863+00:00",
+      "last_seen": "2026-09-13T08:50:32.874647+00:00",
+      "sensitivity_candidate": false,
+      "status": "DISCOVERED",
+      "access": "READ"
+    },
+    {
+      "topic": "insight/sim/MD-SIM-01/status",
+      "json_path": "$.counters.alarms",
+      "data_type": "integer",
+      "sample_value": 0,
+      "occurrence_count": 3,
+      "first_seen": "2026-09-13T08:50:32.272263+00:00",
+      "last_seen": "2026-09-13T08:50:32.672972+00:00",
+      "sensitivity_candidate": false,
+      "status": "DISCOVERED",
+      "access": "READ"
+    },
+    {
+      "topic": "insight/sim/MD-SIM-01/status",
+      "json_path": "$.counters.detections",
+      "data_type": "integer",
+      "sample_value": 0,
+      "occurrence_count": 3,
+      "first_seen": "2026-09-13T08:50:32.272263+00:00",
+      "last_seen": "2026-09-13T08:50:32.672972+00:00",
+      "sensitivity_candidate": true,
+      "status": "DISCOVERED",
+      "access": "READ"
+    },
+    {
+      "topic": "insight/sim/MD-SIM-01/status",
+      "json_path": "$.counters.rejects",
+      "data_type": "integer",
+      "sample_value": 0,
+      "occurrence_count": 3,
+      "first_seen": "2026-09-13T08:50:32.272263+00:00",
+      "last_seen": "2026-09-13T08:50:32.672972+00:00",
+      "sensitivity_candidate": false,
+      "status": "DISCOVERED",
+      "access": "READ"
+    },
+    {
+      "topic": "insight/sim/MD-SIM-01/status",
+      "json_path": "$.device_id",
+      "data_type": "string",
+      "sample_value": "MD-SIM-01",
+      "occurrence_count": 3,
+      "first_seen": "2026-09-13T08:50:32.272263+00:00",
+      "last_seen": "2026-09-13T08:50:32.672972+00:00",
+      "sensitivity_candidate": false,
+      "status": "DISCOVERED",
+      "access": "READ"
+    },
+    {
+      "topic": "insight/sim/MD-SIM-01/status",
+      "json_path": "$.product.article",
+      "data_type": "string",
+      "sample_value": "ABC123",
+      "occurrence_count": 3,
+      "first_seen": "2026-09-13T08:50:32.272263+00:00",
+      "last_seen": "2026-09-13T08:50:32.672972+00:00",
+      "sensitivity_candidate": false,
+      "status": "DISCOVERED",
+      "access": "READ"
+    },
+    {
+      "topic": "insight/sim/MD-SIM-01/status",
+      "json_path": "$.product.lot",
+      "data_type": "string",
+      "sample_value": "L001",
+      "occurrence_count": 3,
+      "first_seen": "2026-09-13T08:50:32.272263+00:00",
+      "last_seen": "2026-09-13T08:50:32.672972+00:00",
+      "sensitivity_candidate": false,
+      "status": "DISCOVERED",
+      "access": "READ"
+    },
+    {
+      "topic": "insight/sim/MD-SIM-01/status",
+      "json_path": "$.sensitivity.fe",
+      "data_type": "number",
+      "sample_value": 1.2,
+      "occurrence_count": 3,
+      "first_seen": "2026-09-13T08:50:32.272263+00:00",
+      "last_seen": "2026-09-13T08:50:32.672972+00:00",
+      "sensitivity_candidate": true,
+      "status": "DISCOVERED",
+      "access": "READ"
+    },
+    {
+      "topic": "insight/sim/MD-SIM-01/status",
+      "json_path": "$.sensitivity.nonFe",
+      "data_type": "number",
+      "sample_value": 1.5,
+      "occurrence_count": 3,
+      "first_seen": "2026-09-13T08:50:32.272263+00:00",
+      "last_seen": "2026-09-13T08:50:32.672972+00:00",
+      "sensitivity_candidate": true,
+      "status": "DISCOVERED",
+      "access": "READ"
+    },
+    {
+      "topic": "insight/sim/MD-SIM-01/status",
+      "json_path": "$.sensitivity.stainless",
+      "data_type": "number",
+      "sample_value": 2.0,
+      "occurrence_count": 3,
+      "first_seen": "2026-09-13T08:50:32.272263+00:00",
+      "last_seen": "2026-09-13T08:50:32.672972+00:00",
+      "sensitivity_candidate": true,
+      "status": "DISCOVERED",
+      "access": "READ"
+    },
+    {
+      "topic": "insight/sim/MD-SIM-01/status",
+      "json_path": "$.status.running",
+      "data_type": "boolean",
+      "sample_value": true,
+      "occurrence_count": 3,
+      "first_seen": "2026-09-13T08:50:32.272263+00:00",
+      "last_seen": "2026-09-13T08:50:32.672972+00:00",
+      "sensitivity_candidate": false,
+      "status": "DISCOVERED",
+      "access": "READ"
+    },
+    {
+      "topic": "insight/sim/MD-SIM-01/status",
+      "json_path": "$.timestamp",
+      "data_type": "string",
+      "sample_value": "2026-09-13T08:50:32.671864+00:00",
+      "occurrence_count": 3,
+      "first_seen": "2026-09-13T08:50:32.272263+00:00",
+      "last_seen": "2026-09-13T08:50:32.672972+00:00",
+      "sensitivity_candidate": false,
+      "status": "DISCOVERED",
+      "access": "READ"
+    }
+  ],
+  "events": [
+    {
+      "timestamp": "2026-09-13T08:50:33.878229+00:00",
+      "event_type": "METAL_TEST",
+      "description": "triggered via e2e script"
+    }
+  ],
+  "discovery": {
+    "created_at": "2026-09-13T08:50:33.879193+00:00",
+    "capture_file": "capture_example.jsonl"
+  }
+}
