@@ -30,6 +30,9 @@ relativo stato.
 
 ## Quick start — backend + frontend (SSTProt / GeniusOne)
 
+Guida completa (installazione, configurazione dispositivo, test
+connessione e acquisizione, troubleshooting): [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
+
 ```bash
 # terminale 1: dispositivo simulato (nessun hardware reale necessario)
 cd simulator
@@ -100,6 +103,6 @@ Insight/
 - [MQTT.md](docs/MQTT.md) — configurazione MQTT e principio "non inventare Sesotec"
 - [DISCOVERY_PROBE.md](docs/DISCOVERY_PROBE.md) — workflow e acceptance test del Probe
 - [COMMISSIONING.md](docs/COMMISSIONING.md) — procedura tecnico sul campo
-- [DEPLOYMENT.md](docs/DEPLOYMENT.md) — istruzioni di avvio Windows/Docker
+- [DEPLOYMENT.md](docs/DEPLOYMENT.md) — installazione, configurazione dispositivo, test connessione/acquisizione, troubleshooting
 - [ROADMAP.md](docs/ROADMAP.md) — fasi di sviluppo
 - [SECURITY.md](docs/SECURITY.md), [DATABASE.md](docs/DATABASE.md), [PRODUCTION_CONTEXT.md](docs/PRODUCTION_CONTEXT.md), [SENSITIVITY.md](docs/SENSITIVITY.md), [OPCUA.md](docs/OPCUA.md), [TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) — design/placeholder per le fasi successive
