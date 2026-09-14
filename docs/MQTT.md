@@ -1,5 +1,11 @@
 # MQTT
 
+> **Nota**: il backend oggi (`backend/`) implementa il protocollo
+> **SSTProt** (TCP, non MQTT) contro un GeniusOne reale — vedi
+> [SSTPROT.md](SSTPROT.md). Questo documento resta valido per la
+> discovery MQTT (Fase 1, Probe) e per qualunque dispositivo che
+> effettivamente parli MQTT, confermato o meno per questo cliente.
+
 ## Principio fondamentale: non inventare Sesotec
 
 Nessun topic, struttura payload, nome campo, unità di misura o comando WRITE

@@ -1,9 +1,15 @@
 # ARCHITECTURE
 
-> **Stato**: design di riferimento per il backend Insight (Fase 2+). Nulla in
-> questo documento è ancora implementato in `backend/` — vedi
-> [ROADMAP.md](ROADMAP.md). Il Probe e il Simulator (Fase 1, implementati)
-> non dipendono da questa architettura: sono strumenti standalone.
+> **Stato**: questo documento descrive il design a tendere. Il backend reale
+> oggi (`backend/app/`) implementa **SSTProt** direttamente
+> (`app/sstprot/` + `app/poller.py` + `app/main.py`) — vedi
+> [SSTPROT.md](SSTPROT.md) — e NON è ancora rifattorizzato dietro
+> l'interfaccia `IProtocolAdapter` qui sotto: `poller.py` chiama
+> `SstProtConnector`/`commands.py` direttamente. Questo è deliberato (una
+> sola integrazione reale finora non giustifica l'astrazione), ma va
+> tenuto presente leggendo questo documento come fosse già cablato. Il
+> Probe e il Simulator (Fase 1) restano strumenti standalone indipendenti
+> da entrambi.
 
 ## Principio guida
 
@@ -37,12 +43,14 @@ classDiagram
         +read()
         +write()
     }
+    class SstProtAdapter
     class MqttAdapter
     class OpcUaAdapter
     class RestAdapter
 
     Device "1" --> "1" Connection
     Connection "1" --> "1" IProtocolAdapter
+    IProtocolAdapter <|.. SstProtAdapter
     IProtocolAdapter <|.. MqttAdapter
     IProtocolAdapter <|.. OpcUaAdapter
     IProtocolAdapter <|.. RestAdapter
@@ -82,12 +90,24 @@ flowchart TD
   generato dal Probe: nessuna variabile scoperta diventa automaticamente
   utilizzabile in produzione senza conferma umana.
 
+## Cosa esiste davvero oggi vs. questo design
+
+`backend/app/poller.py` di fatto già fa da Acquisition Engine con un task
+asyncio per dispositivo (isolamento per dispositivo, spec sezione 47, già
+rispettato: un errore su un device non blocca gli altri). Non passa ancora
+da `IProtocolAdapter`/`MqttAdapter`/`OpcUaAdapter` — chiama
+`SstProtConnector` direttamente. Se/quando arriverà un secondo protocollo
+reale (MQTT confermato via Probe, o OPC UA), è il momento di estrarre
+l'interfaccia davvero, non prima (evitare l'astrazione prematura con un
+solo caso d'uso concreto).
+
 ## Cosa NON è ancora deciso
 
-- Schema esatto delle tabelle (vedi [DATABASE.md](DATABASE.md) — placeholder).
+- Schema esatto delle tabelle di dominio complete (`production_sessions`,
+  `articles`, `lots`, RBAC, audit) — vedi [DATABASE.md](DATABASE.md). Le
+  tabelle SSTProt realmente in uso (`devices`, `device_readings`,
+  `logbook_entries`) sono invece già definite in `backend/app/models.py`.
 - Formato esatto della configurazione del mapping DWH (spec sezione 17) —
-  dipende dalle tabelle reali del cliente, non ancora note.
-- Se l'Acquisition Engine gira come processo asyncio singolo o worker
-  separati per dispositivo (spec sezione 47, isolamento per dispositivo) —
-  da decidere in Fase 3/4 in base al numero reale di dispositivi da
-  supportare in parallelo.
+  dipende dalle tabelle reali del cliente, non ancora note. Non ancora
+  collegato: il backend oggi archivia letture *del dispositivo*, non
+  ancora correlate a ordine/articolo/lotto.
